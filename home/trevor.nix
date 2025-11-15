@@ -4,14 +4,29 @@
   home.homeDirectory = "/home/trevor";
 
   programs.ghostty.enable = true;
-  programs.fish.enable = true;
+
+  programs.fish = {
+  	enable = true;
+		interactiveShellInit = ''
+			set fish_greeting # Disable greeting
+		'';
+  	shellAliases = {
+  		# Backup binds
+  		bls = "ls";
+  		brm = "rm";
+
+  		# New binds
+  		d = "z";
+  		dl = "lsd";
+  		ls = "lsd";
+  		rm = "rmtrash";
+  		g = "git";
+  		gl = "lazygit";
+  		cl = "clear";
+  	};
+  };
 
 	programs.zoxide = {
-	  enable = true;
-	  enableFishIntegration = true;
-	};
-
-	programs.atuin = {
 	  enable = true;
 	  enableFishIntegration = true;
 	};
@@ -54,16 +69,16 @@
 		evil-helix
 		vscodium
 		code-cursor
-		windsurf
-		zed-editor
+		# windsurf
+		# zed-editor
 
 		opencode
-		gemini-cli
-		qwen-code
+		# gemini-cli
+		# qwen-code
 
-		leetcode-cli
+		# leetcode-cli
 
-		bitwarden
+		bitwarden-desktop
 		libreoffice
 		obsidian
 		vesktop
