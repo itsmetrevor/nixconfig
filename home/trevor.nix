@@ -73,7 +73,7 @@
 		# zed-editor
 
 		opencode
-		# gemini-cli
+		gemini-cli
 		# qwen-code
 
 		# leetcode-cli
